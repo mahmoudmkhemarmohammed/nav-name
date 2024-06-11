@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(#420323,#30023a);
+    height: 100vh;
+}
+
+.parent {
+    background: url(stars1.png);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    text-align: center;
+}
+
+ul:hover li a {
+    opacity: 0;
+}
+
+ul li::after {
+    content: attr(data-text);
+    font-size: 80px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: .7s;
+    letter-spacing: 50px;
+}
+
+ul li::before {
+    content: '';
+    width: 150px;
+    height: 100px;
+    background-color: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% 70%;
+    border-radius: 50%;
+    box-shadow: 0 0 80px orangered;
+    opacity: 0;
+    transition: .5s;
+}
+
+ul li:hover::before{
+    width: 100px;
+    opacity: 0.5;
+}
+ul li:hover::after{
+    opacity: .5;
+    letter-spacing: 3px;
+}
+
+.parent ul li {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.parent ul li a {
+    width: 100px;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #ff0084;
+    padding: 6px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: .5s;
+    position: relative;
+    z-index: 10;
+}
+
+.parent ul li a:hover {
+    box-shadow: 0 0 60px #aea602;
+    color: #fff878;
+    scale: 1.5;
+    opacity: 1;
+    background-color: #0aa4cf;
+}
+
